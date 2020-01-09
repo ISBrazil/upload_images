@@ -1,0 +1,27 @@
+version: "3"
+services:
+    
+  app:
+    build:
+      dockerfile: docker/app.dockerfile
+      context: .
+    image: teste/upload
+    container_name: upload
+    networks:
+      - mysql-compose-network
+    
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx.dockerfile
+    container_name: nginx_upload
+    ports:
+      - 80:80
+    networks:
+      - mysql-compose-network
+    depends_on:
+      - app
+
+networks: 
+  mysql-compose-network:
+    driver: bridge

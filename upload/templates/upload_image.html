@@ -1,0 +1,60 @@
+<!doctype html>
+<head>
+  <title>Upload Meli Experience</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Policy Management | Internal Systems</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="../static/bower_components/bootstrap/style/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../static/bower_components/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../static/bower_components/Ionicons/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../static/style/css/AdminLTE.min.css">
+  <!-- iCheck -->
+</head>
+<body>
+
+  <div class="login-box">
+    <div class="login-logo">
+        <img src="/static/style/img/logo_2.e5c612e3.svg" align="center" width="350px" height="150px">
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        {% include 'alert.html' %}
+      <p class="login-box-msg">Selecione sua imagem</p>
+      <form method="post" action="/" enctype="multipart/form-data">
+        <div class="input-group">
+          <span class="input-group-btn">
+            <span class="btn btn-primary" onclick="$(this).parent().find('input[type=file]').click();">Selecionar</span>
+            <input name="uploaded_file" onchange="$(this).parent().parent().find('.form-control').html($(this).val().split(/[\\|/]/).pop());" style="display: none;" type="file">
+          </span>
+          <span class="form-control"></span>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-xs-8">
+            <div class="checkbox icheck"></div>
+          </div>
+          <!-- /.col -->
+          <div class="col-xs-4">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Enviar</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+    </div>
+    <!-- /.login-box-body -->
+  </div>
+  <!-- /.login-box -->
+  
+  <!-- jQuery 3 -->
+  <script src="../static/bower_components/jquery/style/jquery.min.js"></script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="../static/bower_components/bootstrap/style/js/bootstrap.min.js"></script>
+  <!-- iCheck -->
+      
+</body>
