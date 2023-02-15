@@ -2,4 +2,4 @@ Flask==1.0.2
 Flask_Script==2.0.6
 flask-login
 Flask-WeasyPrint==0.6
-Werkzeug==0.15.3
+Werkzeug==2.2.3
